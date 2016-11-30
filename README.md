@@ -5,6 +5,6 @@ AP Computer Science
 
 Various labs from my AP Computer Science class.
  
-Lab11a100Point = The Sieve of Erosthenes;
+**Lab11a100Point = The Sieve of Erosthenes;
 
- Solves for all prime numbers between 2 and an upper bound chosen by the user.
+--> Solves for all prime numbers between 2 and an upper bound chosen by the user.
