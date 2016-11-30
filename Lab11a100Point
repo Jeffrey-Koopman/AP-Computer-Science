@@ -1,0 +1,65 @@
+import java.util.*;
+
+public class Lab11a100point {
+    public static void main(String args[]) 
+     {
+      Scanner input = new Scanner(System.in);
+
+      System.out.print("Enter the primes upper bound  ===>>  ");
+
+      final int MAX = input.nextInt();
+
+      boolean [] primes = new boolean[MAX];
+
+      computePrimes(primes);
+
+      displayPrimes(primes);
+        }
+       public static void computePrimes(boolean primes[])
+      {
+          // "input" and "temp" are used as temporary variables to store values needed
+          // for the calculations of the prime numbers.
+          
+          
+         System.out.println("\nComputing Prime Numbers");
+         for (int input  = 2; input < primes.length; input++)
+         {
+         primes[input] = true;
+         for (int temp = 2; temp < Math.sqrt(primes.length); temp++)
+         {
+             if (input % temp == 0 && input !=temp)
+             {
+                 primes[input] = false;
+                }
+            }
+        }
+    }
+    public static void displayPrimes(boolean primes[])
+
+    {
+        System.out.println("Prime Numbers Between 1 And "+ primes.length);
+        System.out.println();
+        int xPrime = 0;
+        int num = 0;
+        boolean isnot = true;
+        for(int counter = 0; counter < primes.length; counter++)
+            {
+                if(num % 16 == 0 && isnot != false)
+                {
+                    System.out.println();
+                    isnot = false;
+                }
+                if (primes[counter] == true)
+                {
+                    xPrime = counter;
+                    
+                    String format = String.format("%04d", xPrime);
+                    String result = String.format(format, xPrime);
+                   
+                    System.out.print(result + " ");
+                    num++;
+                    isnot = true;
+                }
+            }   
+     }
+}
